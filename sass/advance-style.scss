@@ -1,0 +1,378 @@
+/*--------------------------------------------------------------
+Advancement plugin settings
+--------------------------------------------------------------*/
+
+
+input.regular-text {
+}
+
+.item {
+	margin: 0 0 .75rem;
+}
+
+.advancement-page-title {
+	background: #fff;
+	margin: 0 0 0 -20px;
+	padding: 0 20px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.05);
+	margin-bottom: 20px;
+	@media screen and (min-width: 72rem) {
+		display: flex;
+		align-items: center;
+	}
+	h2 {
+		margin: 0 2rem 0 0;
+		text-indent: -1000rem;
+		width: 20rem;
+		height: 4.7rem;
+		position: relative;
+		&:before {
+			content: '';
+			text-indent: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 1rem;
+			background: url(../images/usc-advancement.png) no-repeat;
+			background-size: contain;
+		}
+	}
+	
+	.advancement-plugin-menu {
+		height: 100%;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			margin: 0 1px 0 0;
+			padding: 0;
+			a {
+				display: block;
+				text-decoration: none;
+				color: #000;
+				font-weight: 700;
+				font-size: 1rem;
+				padding: 1.75rem 1rem;
+				position: relative;
+				&:before {
+					position: absolute;
+					height: .25rem;
+					width: 100%;
+					content: '';
+					left: 0;
+					bottom: 0;
+				}
+				&:hover:before {
+					background: #ddd;
+				}
+				&.current:before {
+					background: #900;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 72rem) {
+
+	.subsubsub-container {
+		position: sticky;
+		width: calc(20% + -3rem );
+		top: 2.5rem;
+		margin-top: .3rem;
+		left: 0;
+		text-align: right;
+		float: left;
+		.subsubsub {
+			float: none;
+			display: block;
+			li {
+				display: block;
+				margin: 0 0 .75rem;
+			}
+		}
+	}
+
+	.wrap {
+		position: relative;
+	}
+	.inner-container.has-sub-menu {
+		padding-left: 20%;
+	}
+}
+
+.wrap h2 {
+	font-size: 1.75rem;
+}
+
+.delete-item, .add-item {
+	display: inline-block;
+	vertical-align: top;
+	width: 1.75rem;
+	height: 1.75rem;
+	margin: 0 .25rem 0 .5rem;
+	position: relative;
+	text-indent: -1000rem;
+	&.hide {
+		display: none;
+	}
+	&.inactive {
+		pointer-events: none;
+		opacity: .5;
+	}
+	&:before {
+		left: 0;
+		top: 0;
+		text-indent: 0;
+		position: absolute;
+		width: 1.75rem;
+		height: 1.75rem;
+		line-height: 1;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: #8c8f94;
+		border: 1px solid #8c8f94;
+		border-radius: .25rem;
+	}
+	&:hover:before {
+		border-color: #2271b1;
+		color: #2271b1;
+	}
+}
+
+.delete-item:before {
+	content: '–';
+}
+
+.add-item:before {
+	content: '+';
+}
+
+.loading {
+	position: relative;
+	transition: padding-left .3s;
+	padding-left: 2.25rem !important;
+	&:before {
+		animation: circle 1s linear infinite;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		border: .25rem solid rgba(0,0,0,0.2);
+		border-left-color: #2271b1;
+		top: .35rem;
+		left: .4rem;
+		transform-origin: center;
+		content: '';
+		position: absolute;
+		z-index: 1;
+	}
+	&.on:before {
+		border: .25rem solid rgba(0,0,0,0.3);
+		border-left-color: #fff;	
+	}
+}
+
+table.release-list {
+	width: 100%;
+	border-collapse: collapse;
+	th {
+		text-align: left;
+		border-bottom: 1px solid #000;
+	}
+	th, td {
+		padding: .5rem;
+	}
+	th {
+		text-transform: uppercase;
+	}
+	td {
+		border-right: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		background: #fff;
+		&:last-child {
+			border-right: none;
+		}
+	}
+	td.signature {
+		padding: 1px;
+		width: 12rem;
+		img {
+			max-width: 12rem;
+			height: auto;
+		}
+	}
+
+	.link a {
+		padding: .5rem;
+		margin: 0 0 .5rem;
+		background: #fff;
+		color: #2271b1;
+		font-size: .9rem;
+		border: 1px solid #2271b1;
+		text-decoration: none;
+		border-radius: .2rem;
+	}
+}
+
+@keyframes circle {
+	from { transform: rotate(0); }
+	to	 { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes circle {
+	from { -webkit-transform: rotate(0); transform: rotate(0); }
+	to	 { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+.wrap {
+	h3 {
+		border-top: 1px solid #ccc;
+		padding: 1rem 0;
+	}
+	.form-table {
+		clear: none;
+	}
+
+	h3#recent, h3#release-forms {
+		em {
+			margin-left: .5rem;
+			font-weight: 400;
+			font-size: .9rem;
+			a.since {
+				border-radius: .2rem;
+				padding: .4rem .75rem;
+				text-decoration: none;
+				background: #f8f8f8;
+				border: 1px solid #aaa;
+				font-style: normal;
+				float: right;
+				margin-left: 1rem;		
+			}
+		}
+	}
+}
+#wpfooter {
+	display: none;
+}
+button.scrape {
+	padding: .575rem 1rem;
+	margin: 0 0 .5rem;
+	background: #fff;
+	color: #2271b1;
+	font-size: .9rem;
+	border: 1px solid #2271b1;
+	text-decoration: none;
+	border-radius: .2rem;
+}
+
+.jobs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	.button-group {
+		float: right;
+		width: 9rem;
+		margin: 0 0 0 1rem;
+		a {
+			display: block;
+			text-align: center;
+		}	
+	}
+	.feature-job, .block-job {
+		padding: .5rem;
+		margin: 0 0 .5rem;
+		background: #fff;
+		color: #2271b1;
+		font-size: .9rem;
+		border: 1px solid #2271b1;
+		text-decoration: none;
+		border-radius: .2rem;
+		&.on {
+			color: #fff;
+			background: #2271b1;
+		}
+	}
+	.block-job {
+		border-color: #000;
+		color: #000;
+		&.on {
+			color: #fff;
+			background: #000;
+		}
+
+	}
+	li {
+		clear: both;
+		font-size: 1rem;
+		line-height: 1.4;
+		padding: 1.5rem;
+		margin: 0 0 1.5rem;
+		border: 1px solid #ccc;
+		transition: opacity .3s, transform .3s, max-height .3s .3s, margin .3s .3s, padding .3s .3s;
+		max-height: 15rem;
+		&:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+		* html & { height: 1px }
+		a {
+			font-weight: 700;
+			font-size: 1.1rem;
+		}
+		&.removing {
+			opacity: 0;
+			transform: translateX( -25% );
+			max-height: 0;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+
+.intro {
+	font-size: 1.1rem;
+	margin: 0 0 1.5rem;
+}
+
+
+.add-req-group {
+	input {
+		width: calc( 100% + -11.5rem );
+	}
+	button {
+		width: 9rem;
+		padding: .325rem .5rem;
+		margin: 0 0 0 1rem;
+		background: #fff;
+		color: #2271b1;
+		font-size: .9rem;
+		border: 1px solid #2271b1;
+		text-decoration: none;
+		border-radius: .2rem;
+		vertical-align: top;
+		&:hover {
+			color: #fff;
+			background: #900;
+		}
+	}
+	p {
+		padding: 1rem 0 1.5rem 0;
+		border-bottom: none !important;
+		&.note {
+			font-style: italic;
+			a {
+				font-size: inherit !important;
+			}
+			code {
+				font-style: normal;
+			}
+		}
+	}
+}

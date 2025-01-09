@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+Job Opportunities
+--------------------------------------------------------------*/
+
+$serif: "Adobe Caslon Pro", serif;
+
+
+body.jobs {
+	.page-menu ul li span {
+		float: right;
+	}
+	.directory {
+		.groups, .group {
+			margin-bottom: 4rem;
+		}
+		.show p {
+			a {
+				display: block;
+				font-family: $serif;
+				font-weight: 400;
+				font-size: 1.875rem;
+				line-height: 1.15;
+			}
+			span {
+				display: block;
+			}
+		}
+	}
+}
